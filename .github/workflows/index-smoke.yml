@@ -1,0 +1,21 @@
+name: index smoke
+
+# Installs the pinned terminology-indexes library, downloads the latest index
+# release and runs one search + one check. Manual until enrichment exists.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: astral-sh/setup-uv@v6
+      - name: Smoke
+        env:
+          # Raises the GitHub API rate limit; a private index repo needs an App token here.
+          GH_TOKEN: ${{ github.token }}
+        run: uv run enrichment/index_smoke.py

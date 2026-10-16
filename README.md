@@ -11,3 +11,10 @@ dictionary files from the same `gdf` commit.
 If this repository is private, `gdf` needs a `SITE_REPO_TOKEN` Actions secret
 with read access to its contents. Public repositories can use the workflow's
 default token.
+
+`enrichment/` will hold the dataset enrichment. For now it has
+`index_smoke.py`, a check that the pinned
+[terminology-indexes](https://github.com/maturabg/terminology-indexes) library
+installs, downloads the latest index release, and answers one search and one
+link check. Run it with `uv run enrichment/index_smoke.py` or through the
+manual `index smoke` workflow.
