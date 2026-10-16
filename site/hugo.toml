@@ -1,0 +1,23 @@
+baseURL = "https://ulsit46420.github.io/gdf/"
+defaultContentLanguage = "bg"
+title = "EN2BGTERM"
+enableRobotsTXT = true
+
+# This site has no tags/categories — drop the default taxonomies.
+disableKinds = ["taxonomy", "term"]
+
+[params]
+  description = "Превод на терминология в контекста на информационните технологии — английско-български речник."
+  github = "https://github.com/ulsit46420/gdf"
+
+[sitemap]
+  changefreq = "monthly"
+  priority = 0.5
+
+[markup.goldmark.renderer]
+  unsafe = true  # allow inline HTML in markdownified comments/examples
+
+[outputs]
+  home = ["HTML"]
+  section = ["HTML"]
+  page = ["HTML"]
